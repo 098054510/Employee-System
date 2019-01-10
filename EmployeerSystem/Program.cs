@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EmployeerSystem
 {
@@ -48,6 +49,19 @@ namespace EmployeerSystem
                             }
                             break;
                         case 3:
+                            Screen.Search();
+                            Console.WriteLine("Press 'Enter' to Continue.");
+                            try
+                            {
+                                option = int.Parse(Console.ReadLine());
+                            }
+                            catch(Exception e)
+                            {
+                                Console.WriteLine("Unexpected Error " + e.Message);
+                            }
+                            break;
+
+                        case 4:
                             Console.WriteLine("Ending...");
                             break;
                         default:

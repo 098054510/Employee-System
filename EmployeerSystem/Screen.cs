@@ -48,20 +48,22 @@ namespace EmployeerSystem
         {
             Console.WriteLine("1 - Search For People Whose salary is more than $2000.");
             Console.WriteLine("2 - Search For name.");
+            Console.Write("Your Choice: ");
             int N = int.Parse(Console.ReadLine());
             if (N == 1)
             {
                 var e1 = from e in Program.employees
                          where e.Salary > 2000.0
                          select e;
+                Print("Founded Employees: " + e1);
             }
             else
             {
                 Console.Write("Insert The Name of Employee: ");
-                string N = Console.ReadLine();
                 var e2 = from e in Program.employees
-                         where e.Name = N
-                         select e;
+                         where e.Name == "Name"
+                         select e.Name;
+                Print("Founded Names: " + e2);
             }
         }
     }
