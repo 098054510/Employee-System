@@ -25,7 +25,7 @@ namespace EmployeerSystem
             string Name = Console.ReadLine();
             Console.Write("Email: ");
             string Email = Console.ReadLine();
-            Console.Write("Salary: ");
+            Console.Write("Salary: $");
             double Salary = double.Parse(Console.ReadLine());
             Employee E = new Employee(Name, Email, Salary);
             Program.employees.Add(E);
@@ -33,7 +33,6 @@ namespace EmployeerSystem
 
         public static void ShowEmployee()
         {
-            Console.WriteLine(Program.employees);
             var Amount = 0;
             foreach (var employees in Program.employees)
             {
