@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.IO;
 using System.Globalization;
 
 namespace EmployeerSystem
@@ -52,10 +53,12 @@ namespace EmployeerSystem
             int N = int.Parse(Console.ReadLine());
             if (N == 1)
             {
+                Console.WriteLine("Type the Amount of Salary: $");
+                double S = double.Parse(Console.ReadLine());
                 var e1 = from e in Program.employees
-                         where e.Salary > 2000.0
+                         where e.Salary > S
                          select e;
-                Print("Founded Employees: " + e1);
+                Console.WriteLine("Founded Employees: " + e1);
             }
             else
             {
@@ -63,7 +66,7 @@ namespace EmployeerSystem
                 var e2 = from e in Program.employees
                          where e.Name == "Name"
                          select e.Name;
-                Print("Founded Names: " + e2);
+                Console.WriteLine("Founded Names: " + e2);
             }
         }
     }
